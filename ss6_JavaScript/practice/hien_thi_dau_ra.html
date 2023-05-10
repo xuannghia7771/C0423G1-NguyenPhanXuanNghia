@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <!--Hien thi ket qua ham alert-->
+    <button type="button" onclick="showMessage1();">Click Me1!</button>
+    <script>
+        function showMessage1() {
+            alert("Xin Chào!");
+        }
+    </script>
+    <br>
+    <br>
+<!--Hien thi ket qua su dung the HTML    -->
+    <div id="messageDiv"></div>
+    <button type="button" onclick="showMessage2();">Click Me2!</button>
+    <script>
+        function showMessage2() {
+            document.getElementById("messageDiv").innerHTML = "Xin chào!";
+        }
+    </script>
+    <br>
+    <br>
+    <!--Hien thi ket qua su dung document.write()    -->
+    <button type="button" onclick="showMessage3();">Click Me3!</button>
+    <script>
+        function showMessage3() {
+            document.write('Xin chào');
+        }
+    </script>
+    <br>
+    <br>
+    <!--Hien thi ket qua su dung console.log()    -->
+    <button type="button" onclick="showMessage4();">Click Me4!</button>
+    <script>
+        function showMessage4() {
+            console.log("Xin chào!");
+        }
+    </script>
+</body>
+</html>
