@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 7: Giải phương trình bậc 2.-->
+<script>
+    let thamSoA = +prompt('Enter A');
+    let thamSoB = +prompt('Enter B');
+    let thamSoC = +prompt('Enter C');
+    delta = Math.pow(thamSoB,2) - 4*thamSoA*thamSoC;
+    nghiemKep = -thamSoB / (2*thamSoA);
+    nghiem1 = (-thamSoB + Math.sqrt(delta)) / 2*thamSoA;
+    nghiem2 = (-thamSoB - Math.sqrt(delta)) / 2*thamSoA;
+    if(thamSoA == 0){
+        if (thamSoB == 0){
+            if(thamSoC == 0){
+                alert('Phương trình có vô số nghiệm');
+            } else
+                alert('Phương trình vô nghiệm');
+        } else {
+            alert('Phương trình có nghiệm X = '+ -thamSoC/thamSoB);
+        }
+    } else if (delta < 0){
+        alert('Phương trình vô nghiệm');
+    } else if (delta == 0){
+        alert('Phương trình có nghiệm kép X = '+nghiemKep);
+    } else {
+        alert('Phương trình có 2 nghiệm phân biệt X1 = '+nghiem1+' và X2 = '+nghiem2);
+    }
+</script>
+</body>
+</html>

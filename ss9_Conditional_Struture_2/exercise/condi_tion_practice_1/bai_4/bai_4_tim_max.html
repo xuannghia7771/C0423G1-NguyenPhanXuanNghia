@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm max</title>
+</head>
+<body>
+<p id="result" style="font-size: 100px"></p>
+<script>
+    let a = +prompt('nhập số thứ nhất');
+    let b = +prompt('nhập số thứ hai');
+    let c = +prompt('nhập số thứ ba');
+    let max;
+    if(a>b && a>c){
+        max = a;
+    } else if(b>c){
+        max = b;
+    } else {
+        max = c;
+    }
+    document.getElementById('result').innerHTML = "Số lớn nhất là " + max;
+</script>
+</body>
+</html>

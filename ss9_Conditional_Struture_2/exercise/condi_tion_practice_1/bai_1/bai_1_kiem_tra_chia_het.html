@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra a chia hết cho b không</title>
+</head>
+<body>
+<p id="inform" style="font-size: 100px;"></p>
+
+<script>
+    let a = +prompt('Nhập a ');
+    let b = +prompt('Nhập b ');
+    if(a%b == 0){
+        document.getElementById('inform').innerHTML = 'a chia hết cho b';
+    } else
+        document.getElementById('inform').innerHTML = 'a không chia hết cho b';
+</script>
+</body>
+</html>

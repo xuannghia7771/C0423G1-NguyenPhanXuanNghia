@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình chữ nhật</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Nhập cạnh a')
+    let b = +prompt('Nhập cạnh b')
+    dt = a*b;
+    if(a!=b){
+        if(a > 0 && b > 0) {
+            document.writeln('Diện tích hình chữ nhật là: ' + dt);
+        } else {
+            document.writeln('a hoặc b nhỏ hơn 0. Vui lòng nhập lại!');
+        }
+    } else {
+        document.writeln('a và b phải khác nhau. Vui lòng nhập lại');
+    }
+</script>
+</body>
+</html>

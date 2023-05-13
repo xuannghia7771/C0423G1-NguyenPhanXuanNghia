@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực</title>
+</head>
+<body>
+<script>
+    let diemKiemTra = +prompt('Nhập điểm kiểm tra ');
+    let diemGiuaKy = +prompt('Nhập điểm giữa kỳ ');
+    let diemCuoiKy = +prompt('Nhập điểm cuối kỳ ');
+    let tongKet = (diemKiemTra + diemGiuaKy*2 + diemCuoiKy*3)/6;
+    if(tongKet < 10 && tongKet >= 8){
+        alert('Đạt học sinh giỏi');
+    } else if(tongKet<8 && tongKet >=5) {
+        alert('Đạt học sinh khá');
+    } else {
+        alert('Đạt học sinh trung bình');
+    }
+</script>
+</body>
+</html>

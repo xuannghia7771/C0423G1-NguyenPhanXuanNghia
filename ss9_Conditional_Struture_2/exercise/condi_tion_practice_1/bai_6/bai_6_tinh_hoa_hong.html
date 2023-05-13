@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính phần trăm hoa hồng</title>
+</head>
+<body>
+
+<script>
+    let a = +prompt('Nhập doanh thu');
+    if(a <= 100) {
+        let b = a * (5 / 100);
+        alert("Doanh thu " + a + " triệu" + " thì hoa hồng nhận được là " + b + " triệu");
+    } else if (a <= 300){
+        let b = a * (10 / 100);
+        alert("Doanh thu " + a + " triệu" + " thì hoa hồng nhận được là " + b + " triệu");
+    } else {
+        let b = a * (15 / 100);
+        alert("Doanh thu " + a + " triệu" + " thì hoa hồng nhận được là " + b + " triệu");
+    }
+</script>
+</body>
+</html>

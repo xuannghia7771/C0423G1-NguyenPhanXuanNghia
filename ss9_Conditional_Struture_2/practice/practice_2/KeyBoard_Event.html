@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện bàn phím</title>
+</head>
+<body onload="doReady();">
+<img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;right:0px; bottom:0px;" height="100" width="80" />
+</body>
+<script>
+    function moveUp() {
+        let element = document.getElementById("nobita");
+        element.style.bottom = parseInt(element.style.bottom) + 5 + 'px';
+    }
+    function moveDown() {
+        let element = document.getElementById("nobita");
+        element.style.bottom = parseInt(element.style.bottom) - 5 + 'px';
+    }
+    function moveLeft() {
+        let element = document.getElementById("nobita");
+        element.style.right = parseInt(element.style.right) + 5 + 'px';
+    }
+    function moveRight() {
+        let element = document.getElementById("nobita");
+        element.style.right = parseInt(element.style.right) - 5 + 'px';
+    }
+    function moveSetup(kc) {
+        switch (kc.keyCode) {
+            case 37:
+                moveLeft();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 40:
+                moveDown();
+                break;
+            case 65:
+                moveLeft();
+                break;
+            case 87:
+                moveUp();
+                break;
+            case 68:
+                moveRight();
+                break;
+            case 83:
+                moveDown();
+                break;
+        }
+
+    }
+    function doReady() {
+        window.addEventListener("keydown", moveSetup);
+    }
+</script>
+</html>

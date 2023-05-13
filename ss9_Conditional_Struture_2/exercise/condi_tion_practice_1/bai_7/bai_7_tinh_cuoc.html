@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+<script>
+    const phicodinh = 25000;
+    let sophutgoi = prompt('Nhập vào số phút gọi ');
+    if(sophutgoi <= 50){
+        tong = sophutgoi*600 + phicodinh;
+    } else if(sophutgoi <= 150){
+        tong = sophutgoi*400 + phicodinh;
+    } else {
+        tong = sophutgoi * 200 + phicodinh;
+    }
+    document.writeln('Bạn đã gọi '+sophutgoi+' phút');
+    document.writeln('<br>');
+    document.writeln('Số tiền điện thoại phải nộp là '+tong);
+</script>
+</body>
+</html>

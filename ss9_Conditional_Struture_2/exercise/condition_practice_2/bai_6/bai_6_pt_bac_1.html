@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 6: Giải phương trình bậc 1.-->
+<script>
+    let thamSoA = +prompt('Nhập tham số A');
+    let thamSoB = +prompt('Nhập tham số B');
+    let x;
+    if(thamSoA == 0){
+        if (thamSoB == 0){
+            alert('Phương trình có vô số nghiệm');
+        } else {
+            alert('Phương trình vô nghiệm');
+        }
+    } else {
+        alert('Phương trình có nghiệm '+ `${ x = -thamSoB/thamSoA}`);
+    }
+</script>
+</body>
+</html>
