@@ -1,14 +1,14 @@
 function convert() {
-    let From = document.getElementById('fromCurrency').value;
-    let To = document.getElementById('toCurrency').value;
-    let Amount = document.getElementById('amount').value;
+    let from = document.getElementById('fromCurrency').value;
+    let to = document.getElementById('toCurrency').value;
+    let amount = document.getElementById('amount').value;
     let result;
-    if (From == 'usd' && To == 'vnd') {
-       result = Amount * 23000;
-    } else if (From == 'vnd' && To == 'usd'){
-        result = Amount / 23000;
-    } else if (From == 'vnd' || From == 'usd'){
-        result = Amount;
+    if (from == 'usd' && to == 'vnd') {
+        result = amount * 23000;
+    } else if (from == 'vnd' && to == 'usd') {
+        result = amount / 23000;
+    } else if (from == 'vnd' || from == 'usd') {
+        result = amount;
     }
     document.getElementById('result').innerHTML = 'Result: ' + result;
 }

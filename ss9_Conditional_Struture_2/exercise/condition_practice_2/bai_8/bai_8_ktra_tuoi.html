@@ -7,14 +7,14 @@
 <body>
 <!--Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.-->
 <script>
-    let A = +prompt("nhập số tuổi của bạn");
-    if (!isNaN(A)) {
-        if (A <=0 ) {
+    let a = +prompt("nhập số tuổi của bạn");
+    if (!isNaN(a)) {
+        if (a <=0 ) {
             alert("Xin lỗi! Bạn chưa ra đời");
-        } else if (A < 120) {
-            alert("số tuổi của bạn là: " + A);
+        } else if (a < 120) {
+            alert("số tuổi của bạn là: " + a);
         } else
-            alert('Xin chúng mừng bạn đã lọt vào top những người sống dai nhất quả đất với số tuổi là '+ A);
+            alert('Xin chúng mừng bạn đã lọt vào top những người sống dai nhất quả đất với số tuổi là '+ a);
     } else
         alert("Số nhập vào không phải là tuổi của một người. Vui lòng nhập lại!");
 </script>
