@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: In dãy Fibonaci-->
+<script>
+    let a = 1;
+    let b = 1;
+    let numbers = parseInt(prompt('Nhập số lượng các số fibonacci bạn muốn in ra '));
+    let c;
+    for (let i = 0; i < numbers; i++){
+        document.write(a + "&nbsp&nbsp" + "|" + "&nbsp&nbsp");
+        c = a + b;
+        a = b;
+        b = c;
+    }
+</script>
+</body>
+</html>

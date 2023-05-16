@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.-->
+<script>
+    //cách 1:
+    let a = 0; // đại diện cho 1 số chia hết cho 7
+    let b = 30; //Khoảng 30 sô đầu tiên
+    let count = 0; // biến đếm tăng lên 1 sau 1 lần duyệt a chia hết cho 7
+    let sum = 0;
+    while(count < b){// kiểm tra biến đếm nhỏ hơn 30 thì thục hiện vòng lặp
+        if(a % 7===0){
+            document.writeln(a);
+            count++;
+            sum = sum + a;
+        }
+        a++;
+    }
+    document.writeln('<br/>' + 'Tổng là ' + sum);
+
+    //cách 2:
+    // let tong = 0 ;
+    // let a = +prompt('Nhập số muốn chia hết ') ; //7
+    // let b = +prompt('Số lần muốn hiện') //30
+    // let sum = 0;
+    // for (let i = 0; i < b ; i++) {
+    //     tong = a * i;
+    //     document.write(tong + '<br/>');
+    //     sum = sum + tong;
+    //     }
+    // document.writeln('tổng của ' + b + ' số chia hết cho ' + a + ' là '+ sum);
+</script>
+</body>
+</html>
