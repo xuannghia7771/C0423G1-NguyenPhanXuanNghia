@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+do {
+    let a = +prompt(`Hay nhap so tien ban dau`)
+    let b = +prompt(`Ban vay trong vong bao nhieu thang? 24? 120? hay 240 thang`)
+    tienGoc = a / b
+    if (b == 24) {
+        laiThangDau = (a * 13 / 100) / 12
+        conLai = ((a - tienGoc) * 9 / 100) / 12
+        alert(`Tien lai ban can dong thang dau la : ` + laiThangDau + ` va nhung thang con lai la : ` + conLai)
+    } else if (b == 120) {
+        laiThangDau = (a * 11 / 100) / 12
+        conLai = ((a - tienGoc) * 11 / 100) / 12
+        alert(`Tien lai ban can dong thang dau la : ` + laiThangDau + ` va nhung thang con lai la : ` + conLai)
+    } else if (b == 240) {
+        laiThangDau = (a * 9 / 100) / 12
+        conLai = ((a - tienGoc * 13 / 100)) / 12
+        alert(`Tien lai ban can dong thang dau la : ` + laiThangDau + ` va nhung thang con lai la : ` + conLai)
+    } else {
+        alert(`Ban hay nhap lai dung so thang da quy dinh`)
+    }
+} while (true);
+</script>
+</body>
+</html>

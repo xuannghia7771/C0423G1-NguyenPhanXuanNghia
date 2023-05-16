@@ -6,7 +6,21 @@
 </head>
 <body>
 <script>
-    
+    let number = 2; //Khởi tạo một số nguyên tố bắt đầu bằng 2
+    let countPrimeFound = 0; // các snt tìm được
+    do {
+        let countDivisor = 0; //tìm được 1 ước của number thì tăng lên 1
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                countDivisor++;
+            }
+        }
+        if (countDivisor === 2) { // nếu tổng số Ước = 2 (1 và chính nó) thì là snt
+            document.write(number + " là số nguyên tố. <br>");
+            countPrimeFound++;
+        }
+        number++;
+    } while (countPrimeFound < 20);
 </script>
 </body>
 </html>

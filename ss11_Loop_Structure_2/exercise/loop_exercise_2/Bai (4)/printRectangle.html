@@ -7,19 +7,17 @@
 <body>
 <!--Bài 4: In hình chữ nhật-->
 <script>
-    let n = 5;
-    for(let i = 0; i < n; i++){
-        for(let j = 0; j < n; j++){
-            if( i == 0 || i == n-1){
-                document.write("*");
-            } else if (j == 0 || j == n-1){
-                document.write(" ");
-            } else{
-                document.write(" ");
+    for (let i = 0; i < 7; i++) {
+        for (let j = 0; j < 21; j++) {
+            if ( j == 0 || i ==0 || i == 6 || j == 20 ) {
+                document.writeln(`*`)
+            }else {
+                document.writeln(`&nbsp`+`&nbsp`)
             }
         }
-        document.write("<br/>");
+        document.writeln(`<br/>`)
     }
+    document.writeln(`<br/>`)
 </script>
 </body>
 </html>
