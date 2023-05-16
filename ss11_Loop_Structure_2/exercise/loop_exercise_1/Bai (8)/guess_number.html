@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<button onclick="start()" id="startAgain">Start</button>
+<script>
+    function start() {
+        alert("WELCOME TO THE NUMBER-GUESSING GAME !");
+        let headPoint = +prompt("Your amount of numbers is\n From: ");
+        let endPoint = +prompt("To: ");
+        alert("You will guess from " + headPoint + " to " + endPoint);
+
+        let randomNumber = Math.round(Math.random() * (endPoint - headPoint) + headPoint);
+
+        for (let i = 0; i < 3; i++) {
+            let numberGuess = +prompt("Guess in round " + (i + 1));
+            if (numberGuess === randomNumber) {
+                alert("You win!");
+                break;
+            } else if (numberGuess < randomNumber) {
+                alert("The number you guess is smaller");
+            } else if (numberGuess > randomNumber) {
+                alert("The number you guess is greater");
+            } else {
+                alert("You're wrong, guess again!");
+            }
+            if(i === 2) {
+                alert('GAME OVER !!!');
+                document.getElementById("btnStartGame").innerText = "RESTART";
+            }
+        }
+    }
+</script>
+</body>
+</html>
