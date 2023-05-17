@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3- Viết chương trình khởi tạo mảng số nguyên. -->
+<!--Hiển hiện giá trị lớn nhất trong mảng đó. -->
+<!--In ra giá trị trung bình của các phần tử trong mảng.-->
+<script>
+    let array = [5,12,21,6,4,65,10,25,36,9];
+    let max = 0;
+    let index = 0;
+    let sum = 0;
+    for (let i = 0; i < array.length; i++){
+        sum = sum + array[i];
+        if(array[i] > max){
+            max = array[i];
+            index = i;
+        }
+    }
+    let average = sum / array.length;
+    document.write('Max number of array is '+max+' at position '+index);
+    document.write('<hr/>');
+    document.write('Average is '+average);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.-->
+<!-- Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.-->
+<script>
+    let array = [5,12,21,6,4,65,10,25,36,9];
+    let max = 0;
+    let index = 0;
+    for (let i = 0; i < array.length; i++){
+        if(array[i] > max){
+            max = array[i];
+            index = i;
+        }
+    }
+    document.write('Max number of array is '+max+' at position '+index);
+
+</script>
+</body>
+</html>

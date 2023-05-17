@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn.
+    //     Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+    let number = parseInt(prompt('Enter a chain of numbers'));// nhập vào một chuỗi số bất kì
+    let str = number.join();// chuyển số vừa nhập thành kiểu chuỗi với mỗi chữ số là 1 phần tử
+    let result = [str[0]];
+    for(let index = 1; index < str.length; index ++){// duyệt vào từng vị trí của một phần tử trong mảng
+        if(str[index-1] % 2 === 0 && str[index] % 2 === 0){ //kiểm tra nếu phần tử đó và phần tử trước nó là số chẵn
+            result.push('-', str[index]); // lần lượt thêm vào cuối ký tự '-' và phần tử đó vào mảng mới là result
+        } else {
+            result.push(str[index]);// nếu sai điều kiện thì in ra các phần tử còn lại (số)
+        }
+    }
+    document.write(result.join(''));
+
+</script>
+</body>
+</html>

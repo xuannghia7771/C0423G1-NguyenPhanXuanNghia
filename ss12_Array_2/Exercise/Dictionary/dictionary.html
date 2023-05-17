@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="enter">Enter a word: </label>
+<input type="text" id="enter">
+<button onclick="tranSl()">Translate</button>
+<p id="display"></p>
+<!--Phát triển một ứng dụng từ điển đơn giản. -->
+<!--Ứng dụng cho phép tra cứu các từ tiếng Anh sang tiếng Việt. -->
+<!--Danh sách các từ được lưu trữ trong các mảng.-->
+<script>
+    let engWord = ['note', 'car', 'watch', 'computer', 'television', 'glass'];
+    let vnWord = ['ghi chú', 'xe hơi', 'đồng hồ', 'máy tính', 'ti vi', 'kính'];
+    function tranSl() {
+        let word = document.getElementById('enter').value;
+        for(let i = 0; i < engWord.length; i++){
+            if (word === engWord[i]){
+                document.getElementById('display').innerHTML = vnWord[i];
+                break;
+            } else {
+                document.getElementById('display').innerHTML = 'Not found';
+            }
+        }
+    }
+</script>
+</body>
+</html>

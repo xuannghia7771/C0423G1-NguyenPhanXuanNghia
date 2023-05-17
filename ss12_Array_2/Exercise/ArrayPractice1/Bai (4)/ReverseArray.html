@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.-->
+<script>
+    let array = [5,12,21,6,4,65,10,25,36,9];
+    let firttNum = 0;
+    let lastNum = array.length - 1;
+    while (firttNum < lastNum) {
+        let temp = array[firttNum];
+        array[firttNum] = array[lastNum];
+        array[lastNum] = temp;
+        firttNum++;
+        lastNum--;
+    }
+    document.writeln(array);
+</script>
+</body>
+</html>
