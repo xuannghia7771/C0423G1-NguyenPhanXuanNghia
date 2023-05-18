@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.-->
+<script>
+    let str1 = prompt('enter first string');
+    let str2 = prompt('enter second string');
+    let arr1 = str1.split('');
+    let arr2 = str2.split('');
+    let count = 0;
+    for (let i = 0; i < arr1.length; i++) {
+        if(arr1[i] === arr2[i]){
+            count++;
+        }
+    }
+    if(count === arr1.length){
+        document.write('Both strings are the same');
+    } else {
+        document.write('Both strings are not the same');
+    }
+</script>
+</body>
+</html>

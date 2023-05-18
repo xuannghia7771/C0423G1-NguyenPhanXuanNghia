@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. -->
+<!--Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng-->
+<!--(Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)-->
+<script>
+    //cách 1: dùng thuật toán
+    let array = [5,12,21,6,4,65,10,25,36,9];
+    let V = +prompt('Enter a number to find: ');
+    for (let i = 0; i < array.length; i++){
+        if(V === array[i]){
+            for (let j = i; j < array.length-1; j++) {
+                array[j] = array[j + 1];// dịch vị trí phần tử kế bên phải sang vị trí hiện tại
+            }
+            array[array.length-1] = 0; // tại vị trí độ dài mảng - 1 thì gắn 0 vào
+            break;
+        }
+    }
+    document.write('Mảng sau khi đã xóa V ' + '<br/>' + array);
+
+    //cách 2: dùng hàm splice để xóa và hàm push để gắn 0 vào cuối mảng
+    let num = [1, 7, 10, 13, 15, 11, 12, 5, 25, 17];
+    let v = +prompt(`Hay nhap so nguyen bat ki`);
+    let x = num.indexOf(v);
+    if (x !== -1) {
+        num.splice(x, 1);
+        num.push(0);
+    } else {
+        document.write(`V is not in the array . `);
+    }
+    document.writeln(`The array is ` + num);
+</script>
+</body>
+</html>

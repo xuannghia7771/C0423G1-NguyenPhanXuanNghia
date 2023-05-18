@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: Viết chương trình khai báo một mảng kí tự và kích thước của mảng-->
+<!--Chương trình đếm số kí tự trong mảng-->
+<script>
+    let arr = [];
+    let numLength = prompt('enter length of array');
+    let count = 0;
+    for(let i = 0; i < numLength; i++){
+        arr[i] = prompt('enter element at ' + (i+1));
+        if(arr[i] % 1 === 0){
+            count++;
+        }
+    }
+    document.write('sum of numeric characters '+count);
+</script>
+</body>
+</html>
