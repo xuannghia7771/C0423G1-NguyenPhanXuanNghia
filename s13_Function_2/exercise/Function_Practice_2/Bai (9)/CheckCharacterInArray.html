@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, -->
+<!--kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. -->
+<!--Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.-->
+<script>
+    function createArr(n) {
+        let a = [];
+        for (let i = 0; i < n; i++){
+            a[i] = prompt(`Enter element at ${i+1}`) + `&nbsp`;
+        }
+        return a;
+    }
+    function checkCharacter(array, char) {
+        array = [];
+        let count = 0;
+        let flag = false;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === char){
+                flag = true;
+                count++;
+            }
+        }
+        if (flag === true){
+            return (`${char} appears ${count} times`);
+        } else {
+            return -1;
+        }
+    }
+    let numberOfElement = parseInt(prompt('Enter number of element'));
+    let result1 = createArr(numberOfElement);
+    document.write(`Array you's just created is: <br/> ${result1}`);
+    let char = prompt('Enter character to check');
+    let result2 = checkCharacter(result1, char);
+    document.write(`<br/> ${result2}`);
+
+</script>
+</body>
+</html>

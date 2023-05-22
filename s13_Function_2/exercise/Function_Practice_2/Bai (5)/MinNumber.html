@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.-->
+<script>
+    function checkMin(a,b,c) {
+        let min;
+        if(a < b){
+            if(a < c){
+                min = a;
+            } else {
+                min = c;
+            }
+        } else {
+            min = b;
+        }
+        return min;
+    }
+    let result = checkMin(5,10,-5);
+    document.write(`The minimum number is ${result}`);
+</script>
+</body>
+</html>

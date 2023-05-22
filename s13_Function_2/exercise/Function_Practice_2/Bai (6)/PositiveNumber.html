@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+Nếu là nguyên dương trả về true, ngược lại trả về false.-->
+<script>
+    function checkPositiveNum(a) {
+        if (a > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let input = parseInt(prompt('ENTER A NUMBER:'));
+    let result = checkPositiveNum(input);
+    if (checkPositiveNum() === true){
+        document.write(`${input} is ${result}. This is a positive number`);
+    } else {
+        document.write(`${input} is ${result}. This is a negative number`);
+    }
+</script>
+</body>
+</html>
