@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
+<script>
+    function area(r) {
+        let area = Math.PI * Math.pow(r,2);
+        return area;
+    }
+    function perimeter(r) {
+        let perimeter = 2 * Math.PI * r;
+        return perimeter;
+    }
+    let radius = +prompt('Enter radius of Circle: ');
+    let resultArea = area(radius);
+    let resultPerimeter = perimeter(radius);
+    document.write(`Area of the circle is ${resultArea} <br/>`);
+    document.write(`Perimeter of the circle is ${resultPerimeter}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Hàm kiểm tra số nguyên tố-->
+<script>
+    function isPrime(number) {
+        let count = 0;
+        for (let i = 0; i <= number ; i++) {
+            if (number % i === 0){
+                count++;
+            }
+        }
+        if (count === 2){
+            return `${number}` + ' is a Prime Number';
+        } else {
+            return `${number}` + ' is not a Prime Number';
+        }
+    }
+    let input = prompt('Enter a number ');
+    let result = input;
+    if(isNaN(input)){
+        alert('Your input is not a number. Please enter again!');
+    } else {
+        document.write(isPrime(result));
+    }
+</script>
+</body>
+</html>
