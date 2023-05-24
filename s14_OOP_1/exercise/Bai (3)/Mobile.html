@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse">
+    <tr>
+        <th>Samsung</th>
+        <th>Nokia</th>
+    </tr>
+    <tr>
+        <td><textarea id="111"></textarea></td>
+        <td><textarea id="222"></textarea></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="samsung.soanTinNhan()"> enter a message</button>
+        </td>
+        <td>
+            <button onclick="nokia.soanTinNhan()"> enter a message</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="samsung.xemTinNhan()">view message</button>
+        </td>
+        <td>
+            <button onclick="nokia.xemTinNhan()">view message</button>
+        </td>
+    </tr>
+</table>
+<script>
+    class Mobile {
+        constructor(soDienThoai) {
+            this.pin = 100;
+            this.tinDangSoan;
+            this.hopThuDen = [];
+            this.hopThuDaGui = [];
+            this.trangThai = true;
+            this.soDienThoai = soDienThoai;
+        }
+
+        batDienThoai() {
+            alert("Turned On!");
+            this.trangThai = true;
+        }
+
+        tatDienThoai() {
+            alert("Turned Off!");
+            this.trangThai = false;
+        }
+
+        sacPin() {
+            this.pin = 100;
+            alert("Full!");
+        }
+
+        soanTinNhan() {
+            this.tinDangSoan = prompt("Please enter messages: ");
+            let xacNhanGui = confirm("Do you wanna send to anyone");
+            if (xacNhanGui) {
+                let soDienThoaiNguoiNhan = +prompt("Please enter receiver's phone number");
+                this.guiTinNhan(this.tinDangSoan, soDienThoaiNguoiNhan);
+            }
+        }
+
+        guiTinNhan(tinNhan, soDienThoaiNguoiNhan) {
+            let viTriCuaSDT = khoLuuSDT.indexOf(soDienThoaiNguoiNhan);
+            if (viTriCuaSDT !== -1) {
+                alert("sending to  " + soDienThoaiNguoiNhan);
+                let dienThoaiCanNhan = khoLuuDienThoai[viTriCuaSDT];
+                dienThoaiCanNhan.nhanTinNhan(tinNhan + " from phone number " + this.soDienThoai);
+            } else {
+                alert("The phone number does not exist");
+            }
+        }
+
+        nhanTinNhan(tinNhan) {
+            this.hopThuDen.push(tinNhan);
+        }
+
+        xemTinNhan() {
+            let tatCaTinNhan = "";
+            for (let i = 0; i < this.hopThuDen.length; i++) {
+                tatCaTinNhan += this.hopThuDen[i] + "\n";
+            }
+            let idScreen = "" + this.soDienThoai;
+            document.getElementById(idScreen).value = tatCaTinNhan;
+        }
+    }
+
+    let khoLuuSDT = [];
+    let khoLuuDienThoai = [];
+
+    let samsung = new Mobile(111);
+    let nokia = new Mobile(222);
+    khoLuuDienThoai.push(samsung, nokia);
+    khoLuuSDT.push(samsung.soDienThoai, nokia.soDienThoai);
+
+
+</script>
+</body>
+</html>

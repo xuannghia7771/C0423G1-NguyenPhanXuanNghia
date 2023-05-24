@@ -10,13 +10,13 @@
 <script>
     class Hero {
 
-        constructor(image, top, left, size,) {
+        constructor(image, top, left, size, speed) {
 
             this.image = image;
             this.top = top;
             this.left = left;
             this.size = size;
-
+            this.speed = speed;
             this.getHeroElement = function () {
                 return '<img width="' + this.size + '"' +
                     ' height="' + this.size + '"' +
@@ -25,52 +25,48 @@
             }
 
             this.moveRight = function () {
-                this.left += 50;
+                this.left += this.speed;
                 console.log('ok: ' + this.left);
             }
             this.moveLeft = function () {
-                this.left -= 50;
+                this.left -= this.speed;
                 console.log('ok: ' + this.left);
             }
             this.moveDown = function () {
-                this.top += 50;
+                this.top += this.speed;
                 console.log('ok:' + this.top)
-
             }
             this.moveUp = function () {
-                this.top -= 50;
+                this.top -= this.speed;
                 console.log('ok:' + this.top)
-
             }
-
         }
     }
 
-    var hero = new Hero("https://brocanvas.com/wp-content/uploads/2022/01/hinh-anh-doremon-dang-yeu.jpg", 20, 0, 200);
-
-    let flagRight = true;
+    let hero = new Hero("https://www.pngitem.com/pimgs/m/204-2047183_one-piece-zoro-run-png-download-zoro-one.png", 0, 0, 100, 50);
+    let flag = true;
 
     function start() {
-        if (flagRight === true) {
+        if (flag === true) {
             if (hero.left < window.innerWidth - hero.size) {
                 hero.moveRight();
             } else if (hero.top < window.innerHeight - hero.size) {
                 hero.moveDown();
             } else {
-                flagRight = false;
+                flag = false;
             }
         }
-        if (!flagRight) {
-            if (hero.left > hero.size) {
+        if (!flag) {
+            if (hero.left > 0) {
                 hero.moveLeft();
-            } else if (hero.top > hero.size) {
+            } else if (hero.top > 0) {
                 hero.moveUp();
             } else {
-                flagRight = true;
+                flag = true;
             }
         }
         document.getElementById('game').innerHTML = hero.getHeroElement();
-        setTimeout(start, 50)
+        setTimeout(start, 50);
     }
 
     start();
