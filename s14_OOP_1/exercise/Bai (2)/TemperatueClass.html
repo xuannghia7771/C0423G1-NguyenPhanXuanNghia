@@ -21,7 +21,7 @@
 
 <!--Hiển thị ra màn hình nhiệt độ F và độ Kenvin tương ứng.-->
 <script>
-    class TemperatueClass{
+    class Temperature{
         constructor(celsius) {
             this.celcius = celsius;
         }
@@ -32,7 +32,7 @@
             return this.celcius + 273.15;
         }
     }
-    let object = new TemperatueClass(25);
+    let object = new Temperature(25);
     document.write("K = " + object.countKelvins());
     document.write('<hr/>');
     document.write("F = " + object.countFahrenheit());

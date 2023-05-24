@@ -24,7 +24,7 @@
 <!--Tạo đối tượng và giao diện theo đúng kịch bản-->
 <canvas id="DemoCanvas" ></canvas>
 <script>
-    class RectangleClass{
+    class Rectangle{
         constructor(width, height) {
             this.width = width;
             this.height = height;
@@ -45,9 +45,9 @@
             return `The Rectangle have ${this.width} in width and ${this.height} in height. Its area is ${this.getArea()} and perimeter is ${this.getPerimeter()}`
         }
     }
-    let rectangle1 = new RectangleClass(150,50);
+    let rectangle1 = new Rectangle(150,50);
     document.write(rectangle1.display());
-    //rectangle1.setWidth(300);
+    rectangle1.setWidth(300);
 
     let canvas = document.getElementById("DemoCanvas");
     let ctx = canvas.getContext('2d');
