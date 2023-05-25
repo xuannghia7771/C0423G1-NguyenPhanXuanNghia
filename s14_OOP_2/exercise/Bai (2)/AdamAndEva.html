@@ -6,63 +6,77 @@
 </head>
 <body>
 <script>
-    function Apple() {
-        this.weight = 10;
-        this.getWeight = function () {
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+
+        getWeight() {
             return this.weight;
         }
-        this.setWeight = function (weight) {
+
+        setWeight(weight) {
             this.weight = weight
         }
-        this.isEmpty = function () {
+
+        isEmpty() {
             if (this.weight <= 0) {
                 return true;
             } else {
                 return false;
             }
         }
-        this.decreaseApple = function () {
+
+        decreaseApple() {
             if (this.isEmpty()) {
                 alert("táo đã hết")
             } else this.weight--
         }
     }
 
-    function Human(name, gender, weight) {
-        this.name = name;
-        this.getName = function () {
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
             return this.name;
         }
-        this.setName = function (name) {
+
+        setName(name) {
             this.name = name;
         }
 
-        this.gender = gender;
-        this.isMale = function () {
+
+        isMale() {
             if (this.gender === 1) {
                 return true;
             } else {
                 return false
             }
         }
-        this.setGender = function () {
+
+        setGender() {
             if (this.isMale()) {
                 return "Male";
             } else return "Female";
         }
 
-        this.weight = weight;
-        this.getWeight = function () {
+        getWeight() {
             return this.weight;
         }
-        this.setWeight = function (weight) {
+
+        setWeight(weight) {
             this.weight = weight;
         }
 
-        this.checkApple = function (apple) {
+        checkApple(apple) {
             return apple.isEmpty();
         }
-        this.eat = function (apple) {
+
+        eat(apple) {
             if (apple.getWeight() > 0) {
                 apple.decreaseApple();
                 this.weight++;
@@ -70,8 +84,8 @@
         }
     }
 
-    let adam = new Human("adam", 1, 55);
-    let eva = new Human("eva", 2, 40);
+    let adam = new Human("adam", 1, 75);
+    let eva = new Human("eva", 2, 45);
     let apple1 = new Apple();
 
     adam.checkApple(apple1);
