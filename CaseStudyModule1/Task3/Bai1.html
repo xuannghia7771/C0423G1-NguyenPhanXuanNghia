@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng và Loop</title>
+</head>
+<body>
+<script>
+    // Bài 1: Cho mảng a chỉ chứa các số nguyên
+    // Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+    //     b[0]   = a[0]
+    // b[1]   = a[0] + a[1]
+    // b[2]   = a[0] + a[1] + a[2]
+    // ...
+    // b[n - 1] = a[0] + a[1] + ... + a[n - 1]
+    // với n là độ dài của mảng a.
+    function prefixSum(a) {
+        let b = [];
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            sum = sum + a[i];
+            b.push(sum);
+        }
+        return b;
+    }
+    let a = [1,2,3,6];
+    let result = prefixSum(a);
+    document.write(result);
+</script>
+</body>
+</html>

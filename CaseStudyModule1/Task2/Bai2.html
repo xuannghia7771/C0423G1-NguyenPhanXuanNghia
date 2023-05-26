@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop</title>
+</head>
+<body>
+<!--Bài 2: Vẽ tam giác cân đặc có chiều cao h do người dùng nhập vào. Ví dụ: h = 5-->
+<!--         *           -->
+<!--       * * *         -->
+<!--     * * * * *       -->
+<!--   * * * * * * *     -->
+<!-- * * * * * * * * *   -->
+
+<script>
+    let n = 5;
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j <= n*2; j++) {
+            if (j + i >=  n && j-i <= n){
+                document.write('*');
+            } else {
+                document.write('&nbsp&nbsp');
+            }
+        }
+        document.write('<br/>')
+    }
+</script>
+</body>
+</html>

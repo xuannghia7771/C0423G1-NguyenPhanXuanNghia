@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If và Switch case</title>
+</head>
+<body>
+<!--Bài 2: Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm.-->
+<!--Ký tự là bất kỳ được nhập từ bàn phím.-->
+<!--Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'-->
+<script>
+function checkVowel(char) {
+    switch (char) {
+        case 'u':
+        case 'e':
+        case 'o':
+        case 'a':
+        case 'i':
+        case 'U':
+        case 'E':
+        case 'O':
+        case 'A':
+        case 'I':
+            return alert('The character you enter is vowel');
+            break;
+        default:
+            return alert('The character you enter is consonant');
+            break;
+    }
+}
+let c = prompt('Enter a character');
+checkVowel(c);
+
+</script>
+</body>
+</html>
