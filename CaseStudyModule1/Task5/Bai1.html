@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n.-->
+<!--Với m, n là các số nhập từ bàn phím.-->
+<body>
+<script>
+    // let m = parseInt(prompt('Enter number of rows: '));
+    // let n = parseInt(prompt('Enter number of cols: '));
+    function createTwoDimensionalArr(a, m, n) {
+        m = a.length;
+        for (let i = 0; i < m; i++) {
+            n = a[i].length;
+            for (let j = 0; j < n; j++) {
+                a[i][j] = prompt('Enter element at position ['+i+']['+j+']');
+            }
+        }
+        return a;
+    }
+    function displayMatrix(a, m, n){
+        for (m = a.length;
+            for (let i = 0; i < m; i++) {
+                n = a[i].length;
+                for (let j = 0; j < n; j++) {
+                    a[i][j] = prompt('Enter element at position ['+i+']['+j+']');
+                }
+            })
+    }
+    let arr = [];
+    let m = +prompt('Enter number of rows: ');
+    let n = +prompt('Enter number of cols: ');
+    createTwoDimensionalArr(arr, m, n);
+
+</script>
+</body>
+</html>

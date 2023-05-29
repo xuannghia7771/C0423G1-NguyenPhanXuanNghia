@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+</head>
+<body>
+<!--Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.-->
+<!--Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.-->
+<!--⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 ký tự 'a' và 1 kí tự 'c'.-->
+<script>
+    let s1 = "aabcc";
+    let s2 = "adcaa";
+    let arrS1 = s1.split('');
+    let arrS2 = s2.split('');
+    let arrS3 = [];
+    let x = '';
+    let count = 0;
+    for (let i = 0; i < arrS1.length; i++) {
+        for (let j = 0; j < arrS2.length; j++) {
+            if(arrS1[i] === arrS2[j]){
+                arrS3.push(arrS1[i]);
+                arrS2.splice(j, 1);
+                break;
+            }
+        }
+    }
+    for (let i = 0; i < arrS3.length; i++) {
+        if (x === arrS3[i]){
+            x = arrS3[i];
+            count++;
+        }
+        document.write(x + 'xuat hien '+count+'lan');
+    }
+    //document.write(arrS3+'ki tu chung);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ let arr = ['a','a','b','c','a','d','d','b','d'];
+ let count = 0;
+ let x = '';
+ for (let i = 0; i < arr.length; i++) {
+     if (arr[i] === x){
+         x = arr[i];
+         count++;
+     }
+ }
+ document.write(`${x} xuat hien ${count} lan`);
+</script>
+</body>
+</html>
