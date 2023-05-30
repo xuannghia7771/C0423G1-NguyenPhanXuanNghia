@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP</title>
+</head>
+<body>
+<!--Đối với mỗi học viên sẽ có các thông tin:-->
+<!-- -	Mã học viên-->
+<!-- -	Tên-->
+<!-- -	Lớp-->
+<!-- -	Email-->
+<!-- -	Ngày sinh-->
+<!-- -	Module-->
+<!--Xây dựng hệ thống quản lý học viên và kết quả sau kỳ thi với các yêu cầu như sau:-->
+<!--1. Hiển thị tất cả học viên có trong danh sách.-->
+<!--2. Thêm mới học viên-->
+<!--3. Sửa thông tin học viên-->
+<!--4. Xóa học viên.-->
+<!--Chi tiết các yêu cầu:-->
+<!--1. Đối với chức năng hiển thị học viên có trong danh sách sẽ được hiển thị dưới dạng bảng trên màn hình với giao diện tương tự dưới đây-->
+
+<!--2. Khi click vào button thêm mới học viên chương trình sẽ hiển thị hộp thoại prompt() cho người dùng nhập thông tin của học viên. Sau khi người dùng nhập đầy đủ thông tin thì học viên sẽ được thêm vào danh sách.-->
+<!--3. Khi người dùng click vào button sửa thông tin học viên, chương trình sẽ hiển thị hộp thoại prompt() cho người dùng nhập vào mã học viên cần sửa chữa.-->
+<!--Nếu mã học viên tồn tại thì sẽ cho người dùng sửa thông tin của học viên đó. Sau khi sửa xong thông tin được thay đổi lại trên màn hình danh sách.-->
+<!--Còn nếu mã không tồn tại thì sẽ hiển thị hộp thoại thông báo cho người dùng “ Mã học viên không tồn tại”.-->
+<!--4. Khi người dùng click vào button xóa thông tin, chương trình sẽ hiển thị hộp thoại prompt() cho người dùng nhập vào mã học viên cần sửa chữa-->
+<!--Nếu mã học viên tồn tại thì sẽ cho người dùng chọn xóa hoặc không. Nếu người dùng chọn xóa thì học viên sẽ mất đi trên màn hình danh sách còn nếu chọn không thì giữ sẽ giữ lại danh sách cũ.-->
+<!--Ngoài ra nếu mã không tồn tại thì sẽ hiển thị hộp thoại thông báo cho người dùng “ Mã học viên không tồn tại”.-->
+<div>
+    <h1>Bảng danh sách học viên</h1>
+    <hr/>
+</div>
+<div id="tableStudent"></div>
+<script>
+    class Student {
+        constructor(maHV, ten, lop, email, ngaySinh, module) {
+            this.maHV = maHV;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+            this.module = module;
+        }
+    }
+
+    let student1 = new Student('HV-0001', 'Nguyễn Văn A', 'C1022G1', 'nguyenvana@gmail.com', '01/01/2004','Module1');
+    let student2 = new Student('HV-0002', 'Nguyễn Văn B', 'C1122G1', 'nguyenvanb@gmail.com', '02/02/2004','Module1');
+    let student3 = new Student('HV-0003', 'Nguyễn Thị C', 'C1222G1', 'nguyenthic@gmail.com', '03/03/2004','Module1');
+    let studentList = [];
+    studentList.push(student1, student2, student3);
+    display(studentList);
+    function display(arrList) {
+        let table = "<table border=''>";
+        table += "<tr>" +
+            "<th>#</th>" +
+            "<th>Mã học viên</th>" +
+            "<th>Tên</th>" +
+            "<th>Lớp</th>" +
+            "<th>Email</th>" +
+            "<th>Ngày sinh</th>" +
+            "<th>Module</th>" +
+            "</tr>";
+        for (let i = 0; i < arrList.length; i++) {
+            table += "<tr>";
+            table += "<td>"+(i+1)+"</td>";
+            table += "<td>"+arrList[i].maHV+"</td>";
+            table += "<td>"+arrList[i].ten+"</td>";
+            table += "<td>"+arrList[i].lop+"</td>";
+            table += "<td>"+arrList[i].email+"</td>";
+            table += "<td>"+arrList[i].ngaySinh+"</td>";
+            table += "<td>"+arrList[i].module+"</td>";
+            table += "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("tableStudent").innerHTML = table;
+    }
+</script>
+</body>
+</html>

@@ -15,15 +15,17 @@
         let max = numerators[0]/denominators[0];
         let index = 0;
         for (let i = 0; i < numerators.length; i++) {
-            if((numerators[i]/denominators[i]) > max){
+            let result = (numerators[i]/denominators[i]);
+            if(result > max){
                 a = numerators[i];
                 b = denominators[i];
+                max = result
                 index = i;
             }
         }
-        return 'The max fraction is '+a+'/'+b+' at position '+index+' in array';
+        return 'The max fraction is '+a+'/'+b+'='+max+' at position '+index+' in array';
     }
-    let numerators = [5, 2, 5];
+    let numerators = [-5, -2, 4];
     let denominators = [6, 3, 4];
     let result = maxFraction(numerators, denominators);
     document.write(result);
