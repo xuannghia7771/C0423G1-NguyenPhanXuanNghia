@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function countElement(array, x){
+        let count = 0;
+        for(let i=0;i<array.length;i++){
+            if(array[i]===x)
+                count++;
+        }
+        return ( "Phan tu " +  x  + " xuat hien " + count +  " lan");
+    }
+    let arr = ['a','a','b','c','a','d','d','b','d'];
+    let arr2 = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr2.indexOf(arr[i]) === -1){
+            arr2.push(arr[i]);
+            document.write((countElement(arr, arr[i])) + '<br/>');
+        }
+    }
+</script>
+</body>
+</html>

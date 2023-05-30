@@ -5,17 +5,29 @@
     <title>Title</title>
 </head>
 <body>
+<!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
 <script>
- let arr = ['a','a','b','c','a','d','d','b','d'];
- let count = 0;
- let x = '';
- for (let i = 0; i < arr.length; i++) {
-     if (arr[i] === x){
-         x = arr[i];
-         count++;
-     }
- }
- document.write(`${x} xuat hien ${count} lan`);
+    function isPrime(n) {
+        let count = 0;
+        for (let i = 1; i < n; i++) {
+            if (n % i === 0){
+                count++;
+            }
+        }
+        if (count === 2){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let arr = [
+        [1,2,3,4,5],
+        [6,7,8,9,10],
+        [11,12,13,14,15],
+        [16,17,18,19,20],
+        [21,22,23,24,25]
+    ]
+
 </script>
 </body>
 </html>
