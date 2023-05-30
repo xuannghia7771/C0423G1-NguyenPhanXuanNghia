@@ -5,6 +5,39 @@
     <title>Title</title>
 </head>
 <body>
-
+<!--Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều-->
+<script>
+    function findMaxOfMatrix(array){
+        let max = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                }
+            }
+        }
+        return max+' is the max number in matrix';
+    }
+    function findMinOfMatrix(array){
+        let min = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] < min) {
+                    min = array[i][j];
+                }
+            }
+        }
+        return min+' is the min number in matrix';
+    }
+    let array = [
+        [-1,-220,12,4,5],
+        [-6,7,8,9,-10],
+        [11,120,-131,214,15],
+        [-1,17,16,19,20],
+        [-21,5,23,254,500]
+    ]
+    document.write(findMaxOfMatrix(array));
+    document.write('<br/>'+findMinOfMatrix(array));
+</script>
 </body>
 </html>

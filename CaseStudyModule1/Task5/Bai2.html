@@ -8,26 +8,37 @@
 <!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
 <script>
     function isPrime(n) {
-        let count = 0;
-        for (let i = 1; i < n; i++) {
+        let countUoc = 0;
+        for (let i = 1; i <= n; i++) {
             if (n % i === 0){
-                count++;
+                countUoc++;
             }
         }
-        if (count === 2){
+        if (countUoc === 2){
             return true;
-        } else {
-            return false;
         }
     }
-    let arr = [
+    function printListOfPrimeNumber(array){
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++){
+                if (isPrime(array[i][j])){
+                    document.write(array[i][j]+' is prime number '+'<br/>');
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    let array = [
         [1,2,3,4,5],
         [6,7,8,9,10],
         [11,12,13,14,15],
         [16,17,18,19,20],
         [21,22,23,24,25]
     ]
-
+    let result = printListOfPrimeNumber(array);
+    document.write('There are '+result+' prime numbers');
 </script>
 </body>
 </html>
