@@ -13,17 +13,23 @@
 <!--in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.-->
 <body>
 <script>
-
     function normalizeString(str) {
-        let newStr = str.toLowerCase().split('');
-        for (let i = 0; i < newStr.length; i++) {
-            newStr[0] = newStr[0].toUpperCase();
-            if (newStr[i] === " ") {
-                newStr[i + 1] = newStr[i + 1].toUpperCase();
+        str = str.split(' ');
+        let wordArr = [];
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] !== ''){
+                wordArr.push(str[i]);
             }
         }
-        let newStrToString = newStr.join('');
-        return newStrToString;
+        let charArr = [];
+        for (let i = 0; i < wordArr.length; i++) {
+            wordArr[i] = wordArr[i].toLowerCase();
+            charArr = wordArr[i].split('');
+            charArr[0] = charArr[0].toUpperCase();
+            wordArr[i] = charArr.join('');
+        }
+        let perfectStr = wordArr.join(' ');
+        return perfectStr;
     }
     function checkLongestWord (newStrToString){
         let max = 0;
@@ -40,11 +46,8 @@
     let str = prompt('Enter string: ');
     let result = normalizeString(str);
     let result2 = checkLongestWord(result);
-    document.write('The original String is: '+ str);
-    document.write('<hr/>')
     document.write('String after normalizing: '+result);
-    document.write('<hr/>')
-    document.write(result2);
+    document.write('<br/>'+result2);
 
 </script>
 </body>

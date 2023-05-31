@@ -24,6 +24,9 @@
    let price = [15,20,17,18,10,25];
    let select = 0;
    let total = 0;
+   let quantity = 0;
+   let bill = [];
+   let sumOfBill = 0;
    do {
        select = +prompt('We have these drink '+ '\n' + menu.join('\n') + '\nPlease enter number represent for your favorite drink: ');
        if (select === 7){
@@ -33,21 +36,26 @@
                break;
            }
        }
-   } while (select >= 7 || select < 1 || isNaN(select));
-   if (select < 7 || select >= 1){
-       let quantity = 0;
        for (let i = 0; i < menu.length; i++) {
            if (select === i) {
                do {
                    quantity = +prompt(`${menu[i-1]} has price ${price[i-1]}.000 VND.`+'\n'+'How many do you want: ');
                } while (isNaN(quantity) || quantity <= 0);
                total = quantity * price[i - 1];
+               bill.push(total);
            }
        }
+   } while (select !== 7 || select < 1 || isNaN(select));
+
+   for (let i = 0; i < bill.length; i++) {
+       sumOfBill += bill[i];
    }
-   alert(`You have to purchase ${total}.000 VND`);
+   document.write('The bill you have to pay is '+sumOfBill+'.000');
 
-
+   // if (select < 7 || select >= 1){
+   //
+   //
+   // }
 </script>
 </body>
 </html>
