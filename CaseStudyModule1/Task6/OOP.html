@@ -31,6 +31,8 @@
     <h1>Bảng danh sách học viên</h1>
     <hr/>
 </div>
+<button onclick="addStudent()">Thêm học viên</button>
+<button onclick="deleteStudent()">Xóa học viên</button>
 <div id="tableStudent"></div>
 <script>
     class Student {
@@ -50,6 +52,7 @@
     let studentList = [];
     studentList.push(student1, student2, student3);
     display(studentList);
+
     function display(arrList) {
         let table = "<table border='1' style='border-collapse: collapse'>";
         table += "<tr>" +
@@ -74,6 +77,36 @@
         }
         table += "</table>";
         document.getElementById("tableStudent").innerHTML = table;
+    }
+
+    function addStudent() {
+        let newID = prompt('Nhap ma hoc vien: ');
+        let newName = prompt('Nhap ten hoc vien: ');
+        let newClass = prompt('Nhap ten lop: ');
+        let newEmail = prompt('Nhap email: ');
+        let newBirth = prompt('Nhap ngay sinh: ');
+        let newModule = prompt('Nhap module: ');
+        let newStudent = new Student(newID,newName,newClass,newEmail,newBirth,newModule);
+        studentList.push((newStudent));
+        display(studentList);
+    }
+
+    function deleteStudent(maHV) {
+        maHV = prompt('Nhập mã học viên cần xóa: ');
+        let flag = false;
+        for (let i = 0; i < studentList.length; i++) {
+            if (maHV === studentList[i].maHV){
+                confirm('Bạn có muốn xóa học viên '+studentList[i].maHV+' không ?');
+                studentList.splice(i, 1);
+                flag = true;
+            }
+        }
+        if (flag === false){
+            alert('Mã học viên '+maHV+' không tồn tại');
+        } else {
+            return true;
+        }
+        display(studentList);
     }
 </script>
 </body>
